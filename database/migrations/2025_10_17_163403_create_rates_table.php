@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->decimal('rate', 2, 1);
             $table->longText('comment')->nullable();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('booking_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('car_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

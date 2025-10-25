@@ -29,6 +29,9 @@ return new class extends Migration
                 'late'
             ])->default('pending');
             $table->boolean('rated')->default(false);
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('car_id')->constrained()->cascadeOnDelete();
+            $table->softDeletes('deleted_at');
             $table->timestamps();
         });
     }
