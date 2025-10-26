@@ -26,7 +26,7 @@ class BookingResource extends Resource
     protected static string|UnitEnum|null $navigationGroup = 'Cars & Management';
     protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-calendar';
 
-    protected static ?string $recordTitleAttribute = 'name';
+    protected static ?string $recordTitleAttribute = 'id';
 
     public static function form(Schema $schema): Schema
     {

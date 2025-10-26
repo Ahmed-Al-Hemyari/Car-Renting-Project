@@ -25,7 +25,7 @@ class UsersTable
                     ->label('Photo')
                     ->circular()
                     ->size(50)
-                    ->defaultImageUrl(url('/images/no-image-user.jpg')),
+                    ->defaultImageUrl(url('/images/no-image-user.webp')),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('email')

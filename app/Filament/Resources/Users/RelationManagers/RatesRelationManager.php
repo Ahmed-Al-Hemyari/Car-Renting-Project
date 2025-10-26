@@ -6,6 +6,7 @@ use App\Filament\Resources\Rates\RateResource;
 use App\Filament\Resources\Users\UserResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class RatesRelationManager extends RelationManager
@@ -19,6 +20,13 @@ class RatesRelationManager extends RelationManager
         return $table
             ->headerActions([
                 CreateAction::make(),
+            ])
+            ->columns([
+            TextColumn::make('user.name')->sortable()->searchable(),
+            TextColumn::make('rate')
+                ->label('Rate')->sortable(),
+            TextColumn::make('comment')
+                ->label('Comment')->searchable(),
             ]);
     }
 }

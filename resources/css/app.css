@@ -1,11 +1,26 @@
 @import 'tailwindcss';
 
+@layer theme {
+  :root {
+    --breakpoint-xs: 0px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 976px;
+    --breakpoint-xl: 1440px;
+
+    --color-red: #941b1d;
+    --color-red-hover: #731415;
+  }
+}
+
 @import 'tw-animate-css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
 @custom-variant dark (&:is(.dark *));
+
+/* Tailwind base styles */
 
 @theme inline {
     --font-sans:
@@ -125,7 +140,7 @@
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
     --sidebar: hsl(0 0% 98%);
 }
-
+/* 
 .dark {
     --background: hsl(0 0% 3.9%);
     --foreground: hsl(0 0% 98%);
@@ -160,7 +175,7 @@
     --sidebar-border: hsl(0 0% 15.9%);
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
     --sidebar: hsl(240 5.9% 10%);
-}
+} */
 
 @layer base {
     * {

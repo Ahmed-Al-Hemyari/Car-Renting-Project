@@ -132,6 +132,7 @@ class Car extends Model
     public function unavailableDates()
     {
         return $this->bookings
+            ->whereIn('status', ['pending', 'confirmed', 'active'])
             ->flatMap(function ($booking) {
                 $period = new \DatePeriod(
                     new \DateTime($booking->start_date),
@@ -144,5 +145,6 @@ class Car extends Model
             })
             ->unique()
             ->values();
+
     }
 }
