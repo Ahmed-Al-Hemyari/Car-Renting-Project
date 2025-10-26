@@ -6,6 +6,8 @@ use App\Filament\Resources\Cars\Pages\CreateCar;
 use App\Filament\Resources\Cars\Pages\EditCar;
 use App\Filament\Resources\Cars\Pages\ListCars;
 use App\Filament\Resources\Cars\Pages\ViewCar;
+use App\Filament\Resources\Cars\RelationManagers\BookingsRelationManager;
+use App\Filament\Resources\Cars\RelationManagers\RatesRelationManager;
 use App\Filament\Resources\Cars\Schemas\CarForm;
 use App\Filament\Resources\Cars\Schemas\CarInfolist;
 use App\Filament\Resources\Cars\Tables\CarsTable;
@@ -17,12 +19,14 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use UnitEnum;
 
 class CarResource extends Resource
 {
     protected static ?string $model = Car::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|UnitEnum|null $navigationGroup = 'Cars & Management';
+    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-truck';
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -44,7 +48,8 @@ class CarResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            BookingsRelationManager::class,
+            RatesRelationManager::class
         ];
     }
 

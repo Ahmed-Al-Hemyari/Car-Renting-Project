@@ -13,6 +13,11 @@ class EditCategory extends EditRecord
 {
     protected static string $resource = CategoryResource::class;
 
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        return array_filter($data, fn($value) => !is_null($value));
+    }
+
     protected function getHeaderActions(): array
     {
         return [

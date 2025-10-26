@@ -14,22 +14,25 @@ class CarForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
-                TextInput::make('price')
-                    ->required(),
-                FileUpload::make('image')
-                    ->image(),
-                TextInput::make('rate')
-                    ->required()
-                    ->numeric()
-                    ->default(0.0),
                 Select::make('brand_id')
                     ->relationship('brand', 'name')
+                    ->required(),
+                TextInput::make('name')
                     ->required(),
                 Select::make('category_id')
                     ->relationship('category', 'name')
                     ->required(),
+                TextInput::make('price')
+                    ->numeric()
+                    ->required()
+                    ->prefix('$'),
+                FileUpload::make('image')
+                    ->directory('cars')
+                    ->image(),
+                // TextInput::make('rate')
+                //     ->required()
+                //     ->numeric()
+                //     ->default(0.0),
             ]);
     }
 }

@@ -19,6 +19,8 @@ class BookingsTable
     {
         return $table
             ->columns([
+                TextColumn::make('user.name')->sortable()->searchable(),
+                TextColumn::make('car.name')->sortable()->searchable(),
                 TextColumn::make('start_date')
                     ->date()
                     ->sortable(),
@@ -30,26 +32,6 @@ class BookingsTable
                     ->sortable(),
                 TextColumn::make('status')
                     ->badge(),
-                IconColumn::make('rated')
-                    ->boolean(),
-                TextColumn::make('deleted_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('user_id')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('car_id')
-                    ->numeric()
-                    ->sortable(),
             ])
             ->filters([
                 TrashedFilter::make(),

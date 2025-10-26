@@ -2,24 +2,22 @@
 
 namespace App\Filament\Resources\Categories\RelationManagers;
 
-use App\Filament\Resources\Cars\CarResource;
+use App\Filament\Resources\Categories\CategoryResource;
+use Filament\Actions\CreateAction;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
 
 class CarsRelationManager extends RelationManager
 {
     protected static string $relationship = 'cars';
 
-    protected static ?string $relatedResource = CarResource::class;
+    protected static ?string $relatedResource = CategoryResource::class;
 
-
-    public static function configureTable(Table $table): void
+    public function table(Table $table): Table
     {
-        $table
-            ->columns([
-                TextColumn::make('name')->sortable()->searchable(),
-                TextColumn::make('brand.name')->sortable()->searchable(),
+        return $table
+            ->headerActions([
+                CreateAction::make(),
             ]);
     }
 }

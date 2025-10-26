@@ -19,11 +19,13 @@ class CarsTable
     {
         return $table
             ->columns([
+                TextColumn::make('brand.name')->sortable()->searchable(),
                 TextColumn::make('name')
                     ->searchable(),
+                TextColumn::make('category.name')->sortable()->searchable(),
                 TextColumn::make('price')
+                    ->money('usd')
                     ->searchable(),
-                ImageColumn::make('image'),
                 TextColumn::make('rate')
                     ->numeric()
                     ->sortable(),
@@ -35,8 +37,6 @@ class CarsTable
                 //     ->dateTime()
                 //     ->sortable()
                 //     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('brand.name')->sortable()->searchable(),
-                TextColumn::make('category.name')->sortable()->searchable(),
             ])
             ->filters([
                 TrashedFilter::make(),

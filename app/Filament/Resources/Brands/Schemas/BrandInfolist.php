@@ -4,7 +4,13 @@ namespace App\Filament\Resources\Brands\Schemas;
 
 use App\Models\Brand;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Components\ImageEntry;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Divider;
+use Filament\Schemas\Components\Tabs;
+use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Filament\Tables\Columns\Layout\Split;
 
 class BrandInfolist
 {
@@ -12,17 +18,18 @@ class BrandInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
-                TextEntry::make('website_url'),
-                TextEntry::make('deleted_at')
-                    ->dateTime()
-                    ->visible(fn (Brand $record): bool => $record->trashed()),
-                TextEntry::make('created_at')
-                    ->dateTime()
-                    ->placeholder('-'),
-                TextEntry::make('updated_at')
-                    ->dateTime()
-                    ->placeholder('-'),
+                Section::make('Brand Info')
+                    ->columnSpanFull()
+                    ->schema([
+                        ImageEntry::make('image')
+                            ->label('')
+                            ->columnSpanFull()
+                            ->height('100px')
+                            ->hiddenLabel()
+                            ->placeholder('-'),    
+                        TextEntry::make('name'),
+                        TextEntry::make('website_url'),
+                    ]),
             ]);
     }
 }

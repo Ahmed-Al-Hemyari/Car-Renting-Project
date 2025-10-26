@@ -4,7 +4,10 @@ namespace App\Filament\Resources\Cars\Schemas;
 
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
 
 class CarInfolist
 {
@@ -12,22 +15,23 @@ class CarInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
-                TextEntry::make('price'),
-                ImageEntry::make('image')
-                    ->placeholder('-'),
-                TextEntry::make('rate')
-                    ->numeric(),
-                TextEntry::make('created_at')
-                    ->dateTime()
-                    ->placeholder('-'),
-                TextEntry::make('updated_at')
-                    ->dateTime()
-                    ->placeholder('-'),
-                TextEntry::make('brand_id')
-                    ->numeric(),
-                TextEntry::make('category_id')
-                    ->numeric(),
+                Section::make('Car Info')
+                    ->schema([
+                        ImageEntry::make('image')
+                            ->label('')
+                            ->extraAttributes([
+                                'class' => 'rounded-xl shadow-lg w-full mb-4 object-cover aspect-[16/9]',
+                            ]),
+                        Grid::make(2)
+                            ->schema([
+                                TextEntry::make('brand.name')->label('Brand')->weight('bold'),
+                                TextEntry::make('name')->label('Model'),
+                                TextEntry::make('category.name')->label('Category'),
+                                TextEntry::make('price')->label('Price')->prefix('$'),
+                                TextEntry::make('rate')->label('Rating')->suffix('★')->color('warning'),
+                            ]),
+                    ]),
+
             ]);
     }
 }
