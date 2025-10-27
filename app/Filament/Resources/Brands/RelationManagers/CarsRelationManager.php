@@ -2,11 +2,14 @@
 
 namespace App\Filament\Resources\Brands\RelationManagers;
 
+use App\Filament\Resources\Bookings\BookingResource;
 use App\Filament\Resources\Cars\CarResource;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Support\Enums\Size;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -33,7 +36,12 @@ class CarsRelationManager extends RelationManager
                     ->sortable(),
             ])
             ->headerActions([
-                CreateAction::make(),
+                Action::make('create')
+                ->label('Create')
+                // ->icon('heroicon-o-plus')
+                ->size(Size::Large)
+                ->url(CarResource::getUrl('create'))
+                ->color('primary')
             ])
             ->actions([
                 EditAction::make(),

@@ -4,9 +4,11 @@
     import noImage from '/public/images/no-image-car.svg'
 
     const props = defineProps({
-        car: Array
-    });
-
+        car: {
+            type: Object,
+            required: true,
+        },
+    })
 </script>
 
 <template>

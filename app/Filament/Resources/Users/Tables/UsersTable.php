@@ -2,18 +2,23 @@
 
 namespace App\Filament\Resources\Users\Tables;
 
+use Filament\Actions\Action;
+use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
-use Filament\Forms\Components\TextInput;
+use Illuminate\Database\Eloquent\Builder;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
+use Illuminate\Support\Collection;
 
 class UsersTable
 {
@@ -31,12 +36,6 @@ class UsersTable
                 TextColumn::make('email')
                     ->label('Email address')
                     ->searchable(),
-                // TextColumn::make('email_verified_at')
-                //     ->dateTime()
-                //     ->sortable(),
-                // TextColumn::make('two_factor_confirmed_at')
-                //     ->dateTime()
-                //     ->sortable(),
                 IconColumn::make('admin')
                     ->boolean(),
                 // TextColumn::make('deleted_at')
@@ -53,14 +52,43 @@ class UsersTable
                 //     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                Filter::make('Admin')
+                    ->query(fn (Builder $query): Builder => $query->where('admin', true)),
                 TrashedFilter::make(),
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()->label(''),
+                Action::make('make_admin')
+                    ->label('')
+                    ->icon('heroicon-o-shield-check')
+                    ->color('success')
+                    ->requiresConfirmation()
+                    ->visible(fn ($record) => !$record->admin)
+                    ->action(fn ($record) => $record->update(['admin' => true])),
+                Action::make('revoke_admin')
+                    ->label('')
+                    ->icon('heroicon-o-shield-exclamation')
+                    ->color('danger')
+                    ->requiresConfirmation()
+                    ->visible(fn ($record) => $record->admin)
+                    ->action(fn ($record) => $record->update(['admin' => false])),
+                EditAction::make()->label(''),
+                DeleteAction::make()->label(''),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
+                    BulkAction::make('make_admin')
+                        ->label('Make Admin')
+                        ->icon('heroicon-o-shield-check')
+                        ->color('success')
+                        ->requiresConfirmation()
+                        ->action(fn (Collection $records) => $records->where('admin', false)->each->update(['admin' => true])),
+                    BulkAction::make('revoke_admin')
+                        ->label('Revoke Admin')
+                        ->icon('heroicon-o-shield-exclamation')
+                        ->color('danger')
+                        ->requiresConfirmation()
+                        ->action(fn (Collection $records) => $records->where('admin', true)->each->update(['admin' => false])),
                     DeleteBulkAction::make(),
                     ForceDeleteBulkAction::make(),
                     RestoreBulkAction::make(),

@@ -28,7 +28,7 @@ class UserInfolist
                         ->label('Email address'),
                     IconEntry::make('admin')
                         ->boolean(),
-                ]),
+                ])->columnSpanFull(),
             ]);
     }
 }

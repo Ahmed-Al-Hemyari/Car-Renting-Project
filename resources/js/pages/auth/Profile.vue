@@ -70,7 +70,7 @@
               </Link>
             </div>
             <p class="text-gray-600">{{ user.email }}</p>
-            <Link :href="`/profile/password/reset/${user.id}`" class="text-[var(--color-red)] hover:text-[var(--color-red-hove)] mt-2 text-sm">Update Password</Link>
+            <!-- <Link :href="`/profile/password/reset/${user.id}`" class="text-[var(--color-red)] hover:text-[var(--color-red-hove)] mt-2 text-sm">Update Password</Link> -->
           </div>
         </div>
       </div>

@@ -16,6 +16,8 @@ class BookingForm
 {
     public static function configure(Schema $schema): Schema
     {
+        // $unavailbeDates = Car::unavailableDates;
+
         return $schema
         ->components([
                 Select::make('user_id')
@@ -28,42 +30,42 @@ class BookingForm
                     ->required(),
                 DatePicker::make('end_date')
                     ->required(),
-                TextInput::make('total_price')
-                    ->label('Total Price ($)')
-                    ->numeric()
-                    ->required()
-                    ->disabled()
-                    ->dehydrated(true) // still saves to database
-                    ->reactive()
-                    ->suffix('USD')
-                    ->afterStateHydrated(function ($state, callable $set, $get) {
-                        // when form is loaded, recalc if needed
-                        $car = Car::find($get('car_id'));
-                            if ($car && $get('start_date') && $get('end_date')) {
-                                $start = Carbon::parse($get('start_date'));
-                                $end = Carbon::parse($get('end_date'));
-                                $days = $end->diffInDays($start);
-                                $set('total_price', $car->price * max($days, 1));
-                            }
-                        })
-                    ->reactive()
-                    ->afterStateUpdated(function ($state, callable $set, $get) {
-                        $car = Car::find($get('car_id'));
-                        if (! $car) {
-                            $set('total_price', null);
-                            return;
-                        }
+                // TextInput::make('total_price')
+                //     ->label('Total Price ($)')
+                //     ->numeric()
+                //     ->required()
+                //     ->disabled()
+                //     ->dehydrated(true) // still saves to database
+                //     ->reactive()
+                //     ->suffix('USD')
+                //     ->afterStateHydrated(function ($state, callable $set, $get) {
+                //         // when form is loaded, recalc if needed
+                //         $car = Car::find($get('car_id'));
+                //             if ($car && $get('start_date') && $get('end_date')) {
+                //                 $start = Carbon::parse($get('start_date'));
+                //                 $end = Carbon::parse($get('end_date'));
+                //                 $days = $end->diffInDays($start);
+                //                 $set('total_price', $car->price * max($days, 1));
+                //             }
+                //         })
+                //     ->reactive()
+                //     ->afterStateUpdated(function ($state, callable $set, $get) {
+                //         $car = Car::find($get('car_id'));
+                //         if (! $car) {
+                //             $set('total_price', null);
+                //             return;
+                //         }
 
-                        if ($get('start_date') && $get('end_date')) {
-                            $start = Carbon::parse($get('start_date'));
-                            $end = Carbon::parse($get('end_date'));
+                //         if ($get('start_date') && $get('end_date')) {
+                //             $start = Carbon::parse($get('start_date'));
+                //             $end = Carbon::parse($get('end_date'));
 
-                            $days = $end->diffInDays($start);
-                            $total = $car->price * max($days, 1);
+                //             $days = $end->diffInDays($start);
+                //             $total = $car->price * max($days, 1);
 
-                            $set('total_price', $total);
-                        }
-                    }),
+                //             $set('total_price', $total);
+                //         }
+                //     }),
                 Select::make('status')
                     ->options([
                         'pending' => 'Pending',

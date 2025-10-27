@@ -58,76 +58,41 @@ class Car extends Model
 
     public function scopeFilter($query, array $filters)
     {
-        if (!empty($filters['search'])) {
-            $query->where(function($q) use ($filters) {
-                $q->whereHas('brand', function($q2) use ($filters) {
-                    $q2->where('name', 'like', '%' . $filters['search'] . '%');
-                })
-                ->orWhereHas('category', function($q2) use ($filters) {
-                    $q2->where('name', 'like', '%' . $filters['search'] . '%');
-                })
-                ->orWhere('name', 'like', '%' . $filters['search'] . '%');
+        $query->when($filters['search'] ?? null, function ($q, $search) {
+            $q->where(function ($q) use ($search) {
+                $q->whereHas('brand', fn($q2) => $q2->where('name', 'like', "%$search%"))
+                ->orWhereHas('category', fn($q2) => $q2->where('name', 'like', "%$search%"))
+                ->orWhere('name', 'like', "%$search%");
             });
-        }
+        });
 
-        if (!empty($filters['brand'])) {
-            $query->whereHas('brand', function ($q) use ($filters) {
-                $q->where('name', 'like', '%' . $filters['brand'] . '%');
-            });
-        }
+        $query->when($filters['brand'] ?? null, function ($q, $brand) {
+            $q->whereHas('brand', fn($q2) => $q2->where('name', 'like', "%$brand%"));
+        });
 
-        if (!empty($filters['category'])) {
-            $query->whereHas('category', function ($q) use ($filters) {
-                $q->where('name', 'like', '%' . $filters['category'] . '%');
-            });
-        }
+        $query->when($filters['category'] ?? null, function ($q, $category) {
+            $q->whereHas('category', fn($q2) => $q2->where('name', 'like', "%$category%"));
+        });
 
-        if (!empty($filters['availability'])) {
-            if ($filters['availability'] == 'available') {
-                $query->where('availability_date', '<', now());
-            } else {
-                $query->where('availability_date', '>=', now());
+        $query->when($filters['price'] ?? null, function ($q, $price) {
+            if (preg_match('/(\d+)-(\d+)/', $price, $m)) {
+                $q->whereBetween('price', [$m[1], $m[2]]);
+            } elseif (str_ends_with($price, '+')) {
+                $min = (int) rtrim($price, '+');
+                $q->where('price', '>=', $min);
             }
-        }
+        });
 
-
-        if (!empty($filters['price'])) {
-            switch ($filters['price']) {
-                case '0.0':
-                    $query->whereBetween('price', [0, 35]);
-                    break;
-                case '35':
-                    $query->whereBetween('price', [35, 45]);
-                    break;
-                case '45':
-                    $query->whereBetween('price', [45, 55]);
-                    break;
-                case '55':
-                    $query->where('price', '>', 55);
-                    break;
+        $query->when($filters['rate'] ?? null, function ($q, $rate) {
+            if (preg_match('/(\d+(\.\d+)?)-(\d+(\.\d+)?)/', $rate, $m)) {
+                $q->whereBetween('rate', [$m[1], $m[3]]);
+            } elseif (str_ends_with($rate, '+')) {
+                $min = (float) rtrim($rate, '+');
+                $q->where('rate', '>=', $min);
             }
-        }
-
-        if (!empty($filters['rate'])) {
-            switch ($filters['rate']) {
-                case '2.0':
-                    $query->whereBetween('rate', [1.0, 2.0]);
-                    break;
-                case '3.0':
-                    $query->whereBetween('rate', [2.0, 3.0]);
-                    break;
-                case '4.0':
-                    $query->whereBetween('rate', [3.0, 4.0]);
-                    break;
-                case '4.5':
-                    $query->whereBetween('rate', [4.0, 4.5]);
-                    break;
-                case '5.0':
-                    $query->where('rate', '>', 4.5);
-                    break;
-            }
-        }
+        });
     }
+
 
     public function unavailableDates()
     {

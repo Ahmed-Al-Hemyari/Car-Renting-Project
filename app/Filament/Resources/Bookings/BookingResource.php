@@ -28,6 +28,11 @@ class BookingResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'id';
 
+    public static function getRecordTitle($record): string
+    {
+        return "Booking #{$record->id}";
+    }
+
     public static function form(Schema $schema): Schema
     {
         return BookingForm::configure($schema);

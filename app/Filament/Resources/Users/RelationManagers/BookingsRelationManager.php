@@ -4,8 +4,10 @@ namespace App\Filament\Resources\Users\RelationManagers;
 
 use App\Filament\Resources\Bookings\BookingResource;
 use App\Filament\Resources\Users\UserResource;
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Support\Enums\Size;
 use Filament\Tables\Table;
 
 class BookingsRelationManager extends RelationManager
@@ -18,7 +20,12 @@ class BookingsRelationManager extends RelationManager
     {
         return $table
             ->headerActions([
-                CreateAction::make(),
+                Action::make('create')
+                ->label('Create')
+                // ->icon('heroicon-o-plus')
+                ->size(Size::Large)
+                ->url(BookingResource::getUrl('create'))
+                ->color('primary')
             ]);
     }
 }

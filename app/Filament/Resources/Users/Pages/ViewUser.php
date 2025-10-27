@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Users\Pages;
 
 use App\Filament\Resources\Users\UserResource;
 use Filament\Actions\EditAction;
+use Filament\Actions\ReplicateAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -15,6 +16,7 @@ class ViewUser extends ViewRecord
     {
         return [
             EditAction::make(),
+            // ReplicateAction::make()
         ];
     }
 
