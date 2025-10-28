@@ -21,39 +21,11 @@ Tech Stack:
 
 Layer          | Technology
 ---------------|-------------
-Backend        | Laravel 11
+Backend        | Laravel 12
 Frontend       | Vue 3
-Admin Panel    | FilamentPHP 3
+Admin Panel    | FilamentPHP 4
 Database       | MySQL
 Styling        | TailwindCSS
-Auth           | Laravel Breeze / Sanctum
-
----
-
-Quick Start:
-
-1. Clone the repository:
-   git clone https://github.com/your-username/Car-Renting-Project.git
-   cd Car-Renting-Project
-
-2. Install backend dependencies:
-   composer install
-
-3. Install frontend dependencies:
-   npm install
-
-4. Copy environment file and generate app key:
-   cp .env.example .env
-   php artisan key:generate
-
-5. Run migrations and seeders:
-   php artisan migrate --seed
-
-6. Start development servers:
-   php artisan serve
-   npm run dev
-
-Then open your browser at http://localhost:8000
 
 ---
 
@@ -80,7 +52,7 @@ Profile Page
 Contact:
 
 Author: Ahmed Al-Hemyari (https://github.com/Ahmed-Al-Hemyari)
-Email: your.email@example.com
+Email: ahmed.a.alhemyari@gmail.com
 
 ---
 
