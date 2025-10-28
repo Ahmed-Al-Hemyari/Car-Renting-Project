@@ -27,7 +27,6 @@ Admin Panel    | FilamentPHP 3
 Database       | MySQL
 Styling        | TailwindCSS
 Auth           | Laravel Breeze / Sanctum
-Charts         | ApexCharts
 
 ---
 
@@ -56,8 +55,6 @@ Quick Start:
 
 Then open your browser at http://localhost:8000
 
-Note: This project may include licensed tools such as Filament or Nova, which are not included in this repository. Please install them with your own license if needed.
-
 ---
 
 Screenshots (located in public/screenshots):
@@ -77,22 +74,6 @@ Car View        | Bookings Table
 Profile Page
 ------------
 ![Profile Page](public/screenshots/profile-page.png)
-
-
----
----
-
----
-
-Contributing:
-
-Pull requests are welcome. For major changes, please open an issue first to discuss.
-
----
-
-License:
-
-This project is open-source and available under the MIT License.
 
 ---
 
