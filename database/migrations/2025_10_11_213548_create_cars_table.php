@@ -17,9 +17,9 @@ return new class extends Migration
             $table->decimal('price');
             $table->string('image')->nullable();
             $table->decimal('rate', 2, 1)->default(0);
+            $table->json('unavailable_dates')->nullable();
             $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->softDeletes('deleted_at');
             $table->timestamps();
         });
     }

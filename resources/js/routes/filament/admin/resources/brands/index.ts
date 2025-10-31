@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/admin/brands',
+    url: '/dashboard/brands',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: index.url(options),
@@ -55,7 +55,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url(options),
@@ -64,7 +64,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url({
@@ -80,7 +80,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -89,13 +89,13 @@ export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => (
 
 create.definition = {
     methods: ["get","head"],
-    url: '/admin/brands/create',
+    url: '/dashboard/brands/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 create.url = (options?: RouteQueryOptions) => {
     return create.definition.url + queryParams(options)
@@ -104,7 +104,7 @@ create.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -113,7 +113,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: create.url(options),
@@ -123,7 +123,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
     const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: create.url(options),
@@ -133,7 +133,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
         createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url(options),
@@ -142,7 +142,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
         createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url({
@@ -158,7 +158,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 export const view = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: view.url(args, options),
@@ -167,13 +167,13 @@ export const view = (args: { record: string | number } | [record: string | numbe
 
 view.definition = {
     methods: ["get","head"],
-    url: '/admin/brands/{record}',
+    url: '/dashboard/brands/{record}',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 view.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -201,7 +201,7 @@ view.url = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 view.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: view.url(args, options),
@@ -210,7 +210,7 @@ view.get = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 view.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: view.url(args, options),
@@ -220,7 +220,7 @@ view.head = (args: { record: string | number } | [record: string | number ] | st
     /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
     const viewForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: view.url(args, options),
@@ -230,7 +230,7 @@ view.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
         viewForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: view.url(args, options),
@@ -239,7 +239,7 @@ view.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
         viewForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: view.url(args, {
@@ -255,7 +255,7 @@ view.head = (args: { record: string | number } | [record: string | number ] | st
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 export const edit = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -264,13 +264,13 @@ export const edit = (args: { record: string | number } | [record: string | numbe
 
 edit.definition = {
     methods: ["get","head"],
-    url: '/admin/brands/{record}/edit',
+    url: '/dashboard/brands/{record}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 edit.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -298,7 +298,7 @@ edit.url = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 edit.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -307,7 +307,7 @@ edit.get = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 edit.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
@@ -317,7 +317,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
     /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
     const editForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
@@ -327,7 +327,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
         editForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
@@ -336,7 +336,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
         editForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {

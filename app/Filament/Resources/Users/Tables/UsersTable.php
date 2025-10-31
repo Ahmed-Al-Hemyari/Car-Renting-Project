@@ -38,23 +38,10 @@ class UsersTable
                     ->searchable(),
                 IconColumn::make('admin')
                     ->boolean(),
-                // TextColumn::make('deleted_at')
-                //     ->dateTime()
-                //     ->sortable()
-                //     ->toggleable(isToggledHiddenByDefault: true),
-                // TextColumn::make('created_at')
-                //     ->dateTime()
-                //     ->sortable()
-                //     ->toggleable(isToggledHiddenByDefault: true),
-                // TextColumn::make('updated_at')
-                //     ->dateTime()
-                //     ->sortable()
-                //     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 Filter::make('Admin')
                     ->query(fn (Builder $query): Builder => $query->where('admin', true)),
-                TrashedFilter::make(),
             ])
             ->recordActions([
                 ViewAction::make()->label(''),
@@ -90,8 +77,6 @@ class UsersTable
                         ->requiresConfirmation()
                         ->action(fn (Collection $records) => $records->where('admin', true)->each->update(['admin' => false])),
                     DeleteBulkAction::make(),
-                    ForceDeleteBulkAction::make(),
-                    RestoreBulkAction::make(),
                 ]),
             ]);
     }

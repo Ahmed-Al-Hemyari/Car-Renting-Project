@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 const CreateCategory = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: CreateCategory.url(options),
@@ -11,13 +11,13 @@ const CreateCategory = (options?: RouteQueryOptions): RouteDefinition<'get'> => 
 
 CreateCategory.definition = {
     methods: ["get","head"],
-    url: '/admin/categories/create',
+    url: '/dashboard/categories/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 CreateCategory.url = (options?: RouteQueryOptions) => {
     return CreateCategory.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ CreateCategory.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 CreateCategory.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: CreateCategory.url(options),
@@ -35,7 +35,7 @@ CreateCategory.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 CreateCategory.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: CreateCategory.url(options),
@@ -45,7 +45,7 @@ CreateCategory.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => 
     /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
     const CreateCategoryForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: CreateCategory.url(options),
@@ -55,7 +55,7 @@ CreateCategory.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => 
             /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
         CreateCategoryForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: CreateCategory.url(options),
@@ -64,7 +64,7 @@ CreateCategory.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => 
             /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
         CreateCategoryForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: CreateCategory.url({

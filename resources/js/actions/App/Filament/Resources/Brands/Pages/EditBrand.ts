@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 const EditBrand = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditBrand.url(args, options),
@@ -11,13 +11,13 @@ const EditBrand = (args: { record: string | number } | [record: string | number 
 
 EditBrand.definition = {
     methods: ["get","head"],
-    url: '/admin/brands/{record}/edit',
+    url: '/dashboard/brands/{record}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 EditBrand.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ EditBrand.url = (args: { record: string | number } | [record: string | number ] 
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 EditBrand.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditBrand.url(args, options),
@@ -54,7 +54,7 @@ EditBrand.get = (args: { record: string | number } | [record: string | number ] 
 /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
 EditBrand.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: EditBrand.url(args, options),
@@ -64,7 +64,7 @@ EditBrand.head = (args: { record: string | number } | [record: string | number ]
     /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
     const EditBrandForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: EditBrand.url(args, options),
@@ -74,7 +74,7 @@ EditBrand.head = (args: { record: string | number } | [record: string | number ]
             /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
         EditBrandForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditBrand.url(args, options),
@@ -83,7 +83,7 @@ EditBrand.head = (args: { record: string | number } | [record: string | number ]
             /**
 * @see \App\Filament\Resources\Brands\Pages\EditBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/EditBrand.php:7
- * @route '/admin/brands/{record}/edit'
+ * @route '/dashboard/brands/{record}/edit'
  */
         EditBrandForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditBrand.url(args, {

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 const EditRate = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditRate.url(args, options),
@@ -11,13 +11,13 @@ const EditRate = (args: { record: string | number } | [record: string | number ]
 
 EditRate.definition = {
     methods: ["get","head"],
-    url: '/admin/rates/{record}/edit',
+    url: '/dashboard/rates/{record}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 EditRate.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ EditRate.url = (args: { record: string | number } | [record: string | number ] |
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 EditRate.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditRate.url(args, options),
@@ -54,7 +54,7 @@ EditRate.get = (args: { record: string | number } | [record: string | number ] |
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 EditRate.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: EditRate.url(args, options),
@@ -64,7 +64,7 @@ EditRate.head = (args: { record: string | number } | [record: string | number ] 
     /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
     const EditRateForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: EditRate.url(args, options),
@@ -74,7 +74,7 @@ EditRate.head = (args: { record: string | number } | [record: string | number ] 
             /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
         EditRateForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditRate.url(args, options),
@@ -83,7 +83,7 @@ EditRate.head = (args: { record: string | number } | [record: string | number ] 
             /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
         EditRateForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditRate.url(args, {

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Users\Pages\ViewUser::__invoke
  * @see app/Filament/Resources/Users/Pages/ViewUser.php:7
- * @route '/admin/users/{record}'
+ * @route '/dashboard/users/{record}'
  */
 const ViewUser = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewUser.url(args, options),
@@ -11,13 +11,13 @@ const ViewUser = (args: { record: string | number } | [record: string | number ]
 
 ViewUser.definition = {
     methods: ["get","head"],
-    url: '/admin/users/{record}',
+    url: '/dashboard/users/{record}',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Users\Pages\ViewUser::__invoke
  * @see app/Filament/Resources/Users/Pages/ViewUser.php:7
- * @route '/admin/users/{record}'
+ * @route '/dashboard/users/{record}'
  */
 ViewUser.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ ViewUser.url = (args: { record: string | number } | [record: string | number ] |
 /**
 * @see \App\Filament\Resources\Users\Pages\ViewUser::__invoke
  * @see app/Filament/Resources/Users/Pages/ViewUser.php:7
- * @route '/admin/users/{record}'
+ * @route '/dashboard/users/{record}'
  */
 ViewUser.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewUser.url(args, options),
@@ -54,7 +54,7 @@ ViewUser.get = (args: { record: string | number } | [record: string | number ] |
 /**
 * @see \App\Filament\Resources\Users\Pages\ViewUser::__invoke
  * @see app/Filament/Resources/Users/Pages/ViewUser.php:7
- * @route '/admin/users/{record}'
+ * @route '/dashboard/users/{record}'
  */
 ViewUser.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ViewUser.url(args, options),
@@ -64,7 +64,7 @@ ViewUser.head = (args: { record: string | number } | [record: string | number ] 
     /**
 * @see \App\Filament\Resources\Users\Pages\ViewUser::__invoke
  * @see app/Filament/Resources/Users/Pages/ViewUser.php:7
- * @route '/admin/users/{record}'
+ * @route '/dashboard/users/{record}'
  */
     const ViewUserForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ViewUser.url(args, options),
@@ -74,7 +74,7 @@ ViewUser.head = (args: { record: string | number } | [record: string | number ] 
             /**
 * @see \App\Filament\Resources\Users\Pages\ViewUser::__invoke
  * @see app/Filament/Resources/Users/Pages/ViewUser.php:7
- * @route '/admin/users/{record}'
+ * @route '/dashboard/users/{record}'
  */
         ViewUserForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewUser.url(args, options),
@@ -83,7 +83,7 @@ ViewUser.head = (args: { record: string | number } | [record: string | number ] 
             /**
 * @see \App\Filament\Resources\Users\Pages\ViewUser::__invoke
  * @see app/Filament/Resources/Users/Pages/ViewUser.php:7
- * @route '/admin/users/{record}'
+ * @route '/dashboard/users/{record}'
  */
         ViewUserForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewUser.url(args, {

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Cars\Pages\EditCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/EditCar.php:7
- * @route '/admin/cars/{record}/edit'
+ * @route '/dashboard/cars/{record}/edit'
  */
 const EditCar = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditCar.url(args, options),
@@ -11,13 +11,13 @@ const EditCar = (args: { record: string | number } | [record: string | number ] 
 
 EditCar.definition = {
     methods: ["get","head"],
-    url: '/admin/cars/{record}/edit',
+    url: '/dashboard/cars/{record}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Cars\Pages\EditCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/EditCar.php:7
- * @route '/admin/cars/{record}/edit'
+ * @route '/dashboard/cars/{record}/edit'
  */
 EditCar.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ EditCar.url = (args: { record: string | number } | [record: string | number ] | 
 /**
 * @see \App\Filament\Resources\Cars\Pages\EditCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/EditCar.php:7
- * @route '/admin/cars/{record}/edit'
+ * @route '/dashboard/cars/{record}/edit'
  */
 EditCar.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditCar.url(args, options),
@@ -54,7 +54,7 @@ EditCar.get = (args: { record: string | number } | [record: string | number ] | 
 /**
 * @see \App\Filament\Resources\Cars\Pages\EditCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/EditCar.php:7
- * @route '/admin/cars/{record}/edit'
+ * @route '/dashboard/cars/{record}/edit'
  */
 EditCar.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: EditCar.url(args, options),
@@ -64,7 +64,7 @@ EditCar.head = (args: { record: string | number } | [record: string | number ] |
     /**
 * @see \App\Filament\Resources\Cars\Pages\EditCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/EditCar.php:7
- * @route '/admin/cars/{record}/edit'
+ * @route '/dashboard/cars/{record}/edit'
  */
     const EditCarForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: EditCar.url(args, options),
@@ -74,7 +74,7 @@ EditCar.head = (args: { record: string | number } | [record: string | number ] |
             /**
 * @see \App\Filament\Resources\Cars\Pages\EditCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/EditCar.php:7
- * @route '/admin/cars/{record}/edit'
+ * @route '/dashboard/cars/{record}/edit'
  */
         EditCarForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditCar.url(args, options),
@@ -83,7 +83,7 @@ EditCar.head = (args: { record: string | number } | [record: string | number ] |
             /**
 * @see \App\Filament\Resources\Cars\Pages\EditCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/EditCar.php:7
- * @route '/admin/cars/{record}/edit'
+ * @route '/dashboard/cars/{record}/edit'
  */
         EditCarForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditCar.url(args, {

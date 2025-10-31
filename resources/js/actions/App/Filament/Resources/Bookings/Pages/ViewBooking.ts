@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ViewBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ViewBooking.php:7
- * @route '/admin/bookings/{record}'
+ * @route '/dashboard/bookings/{record}'
  */
 const ViewBooking = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewBooking.url(args, options),
@@ -11,13 +11,13 @@ const ViewBooking = (args: { record: string | number } | [record: string | numbe
 
 ViewBooking.definition = {
     methods: ["get","head"],
-    url: '/admin/bookings/{record}',
+    url: '/dashboard/bookings/{record}',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ViewBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ViewBooking.php:7
- * @route '/admin/bookings/{record}'
+ * @route '/dashboard/bookings/{record}'
  */
 ViewBooking.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ ViewBooking.url = (args: { record: string | number } | [record: string | number 
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ViewBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ViewBooking.php:7
- * @route '/admin/bookings/{record}'
+ * @route '/dashboard/bookings/{record}'
  */
 ViewBooking.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewBooking.url(args, options),
@@ -54,7 +54,7 @@ ViewBooking.get = (args: { record: string | number } | [record: string | number 
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ViewBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ViewBooking.php:7
- * @route '/admin/bookings/{record}'
+ * @route '/dashboard/bookings/{record}'
  */
 ViewBooking.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ViewBooking.url(args, options),
@@ -64,7 +64,7 @@ ViewBooking.head = (args: { record: string | number } | [record: string | number
     /**
 * @see \App\Filament\Resources\Bookings\Pages\ViewBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ViewBooking.php:7
- * @route '/admin/bookings/{record}'
+ * @route '/dashboard/bookings/{record}'
  */
     const ViewBookingForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ViewBooking.url(args, options),
@@ -74,7 +74,7 @@ ViewBooking.head = (args: { record: string | number } | [record: string | number
             /**
 * @see \App\Filament\Resources\Bookings\Pages\ViewBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ViewBooking.php:7
- * @route '/admin/bookings/{record}'
+ * @route '/dashboard/bookings/{record}'
  */
         ViewBookingForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewBooking.url(args, options),
@@ -83,7 +83,7 @@ ViewBooking.head = (args: { record: string | number } | [record: string | number
             /**
 * @see \App\Filament\Resources\Bookings\Pages\ViewBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ViewBooking.php:7
- * @route '/admin/bookings/{record}'
+ * @route '/dashboard/bookings/{record}'
  */
         ViewBookingForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewBooking.url(args, {

@@ -65,7 +65,7 @@ class BrandResource extends Resource
     {
         return parent::getRecordRouteBindingEloquentQuery()
             ->withoutGlobalScopes([
-                SoftDeletingScope::class,
+                // SoftDeletingScope::class,
             ]);
     }
 }

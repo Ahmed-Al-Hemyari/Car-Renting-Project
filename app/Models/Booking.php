@@ -4,13 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Booking extends Model
 {
 
     //
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected static function booted()
     {
@@ -21,6 +20,18 @@ class Booking extends Model
             } else {
                 $booking->total_price = 0;
             }
+        });
+
+        static::created(function ($booking) {
+            $booking->car->updateUnavailableDates();
+        });
+
+        static::updated(function ($booking) {
+            $booking->car->updateUnavailableDates();
+        });
+
+        static::deleted(function ($booking) {
+            $booking->car->updateUnavailableDates();
         });
     }
 
@@ -52,5 +63,19 @@ class Booking extends Model
     {
         return $this->hasMany(Rate::class);
     }
+
+    // public function calculateTotalPrice($carId, $startDate, $endDate)
+    // {
+    //     $car = Car::find($carId);
+    //     if (!$car) {
+    //         return 0;
+    //     }
+
+    //     $start = \Carbon\Carbon::parse($startDate);
+    //     $end = \Carbon\Carbon::parse($endDate);
+    //     $days = $start->diffInDays($end);
+
+    //     return $car->price * $days;
+    // }
 }
 

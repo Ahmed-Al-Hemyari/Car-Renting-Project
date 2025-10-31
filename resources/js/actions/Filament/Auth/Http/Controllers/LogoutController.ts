@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \Filament\Auth\Http\Controllers\LogoutController::__invoke
  * @see vendor/filament/filament/src/Auth/Http/Controllers/LogoutController.php:10
- * @route '/admin/logout'
+ * @route '/dashboard/logout'
  */
 const LogoutController = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: LogoutController.url(options),
@@ -11,13 +11,13 @@ const LogoutController = (options?: RouteQueryOptions): RouteDefinition<'post'> 
 
 LogoutController.definition = {
     methods: ["post"],
-    url: '/admin/logout',
+    url: '/dashboard/logout',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \Filament\Auth\Http\Controllers\LogoutController::__invoke
  * @see vendor/filament/filament/src/Auth/Http/Controllers/LogoutController.php:10
- * @route '/admin/logout'
+ * @route '/dashboard/logout'
  */
 LogoutController.url = (options?: RouteQueryOptions) => {
     return LogoutController.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ LogoutController.url = (options?: RouteQueryOptions) => {
 /**
 * @see \Filament\Auth\Http\Controllers\LogoutController::__invoke
  * @see vendor/filament/filament/src/Auth/Http/Controllers/LogoutController.php:10
- * @route '/admin/logout'
+ * @route '/dashboard/logout'
  */
 LogoutController.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: LogoutController.url(options),
@@ -36,7 +36,7 @@ LogoutController.post = (options?: RouteQueryOptions): RouteDefinition<'post'> =
     /**
 * @see \Filament\Auth\Http\Controllers\LogoutController::__invoke
  * @see vendor/filament/filament/src/Auth/Http/Controllers/LogoutController.php:10
- * @route '/admin/logout'
+ * @route '/dashboard/logout'
  */
     const LogoutControllerForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
         action: LogoutController.url(options),
@@ -46,7 +46,7 @@ LogoutController.post = (options?: RouteQueryOptions): RouteDefinition<'post'> =
             /**
 * @see \Filament\Auth\Http\Controllers\LogoutController::__invoke
  * @see vendor/filament/filament/src/Auth/Http/Controllers/LogoutController.php:10
- * @route '/admin/logout'
+ * @route '/dashboard/logout'
  */
         LogoutControllerForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
             action: LogoutController.url(options),

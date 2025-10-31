@@ -48,7 +48,7 @@ class CarsTable
                     ->relationship('brand', 'name')
                     ->searchable()
                     ->preload(),
-                TrashedFilter::make(),
+                // TrashedFilter::make(),
             ])
             ->recordActions([
                 ViewAction::make()->label(''),
@@ -58,8 +58,8 @@ class CarsTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
-                    ForceDeleteBulkAction::make(),
-                    RestoreBulkAction::make(),
+                    // ForceDeleteBulkAction::make(),
+                    // RestoreBulkAction::make(),
                     
                 ]),
             ]);

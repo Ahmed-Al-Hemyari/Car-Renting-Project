@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 const EditCategory = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditCategory.url(args, options),
@@ -11,13 +11,13 @@ const EditCategory = (args: { record: string | number } | [record: string | numb
 
 EditCategory.definition = {
     methods: ["get","head"],
-    url: '/admin/categories/{record}/edit',
+    url: '/dashboard/categories/{record}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 EditCategory.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ EditCategory.url = (args: { record: string | number } | [record: string | number
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 EditCategory.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: EditCategory.url(args, options),
@@ -54,7 +54,7 @@ EditCategory.get = (args: { record: string | number } | [record: string | number
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 EditCategory.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: EditCategory.url(args, options),
@@ -64,7 +64,7 @@ EditCategory.head = (args: { record: string | number } | [record: string | numbe
     /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
     const EditCategoryForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: EditCategory.url(args, options),
@@ -74,7 +74,7 @@ EditCategory.head = (args: { record: string | number } | [record: string | numbe
             /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
         EditCategoryForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditCategory.url(args, options),
@@ -83,7 +83,7 @@ EditCategory.head = (args: { record: string | number } | [record: string | numbe
             /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
         EditCategoryForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: EditCategory.url(args, {

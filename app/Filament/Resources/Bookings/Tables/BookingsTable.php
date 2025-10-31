@@ -6,6 +6,7 @@ use App\Models\Booking;
 use App\Models\Brand;
 use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
@@ -66,7 +67,7 @@ class BookingsTable
                     ->formatStateUsing(fn (string $state) => ucfirst($state)),
             ])
             ->filters([
-                TrashedFilter::make(),
+                // TrashedFilter::make(),
                 SelectFilter::make('brand_id')
                     ->label('Brand')
                     ->relationship('car.brand', 'name')
@@ -88,10 +89,11 @@ class BookingsTable
             ->recordActions([
                 ViewAction::make()->label(''),
                 EditAction::make()->label(''),
+                DeleteAction::make()->label(''),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    // DeleteBulkAction::make(),
+                    DeleteBulkAction::make(),
                     // ForceDeleteBulkAction::make(),
                     // RestoreBulkAction::make(),
                     BulkAction::make('mark_as_confirmed')

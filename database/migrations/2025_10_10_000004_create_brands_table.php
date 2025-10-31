@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('image')->nullable();
             $table->string('website_url');
-            $table->softDeletes('deleted_at');
             $table->timestamps();
         });
     }

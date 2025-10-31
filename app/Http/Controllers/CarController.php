@@ -26,7 +26,7 @@ class CarController extends Controller
     
         $brands = Brand::orderBy('name')->get(['id', 'name']);
     
-        return inertia('Cars/Index', [
+        return inertia('Cars/CarsList', [
             'cars' => $cars,
             'brands' => $brands,
             'filters' => $filters,
@@ -39,7 +39,6 @@ class CarController extends Controller
 
         return Inertia::render('Cars/CarShow', [
             'car' => $car,
-            'unavailableDates' => $car->unavailableDates(),
         ]);
     }
 }

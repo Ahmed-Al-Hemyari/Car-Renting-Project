@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 const ListRates = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListRates.url(options),
@@ -11,13 +11,13 @@ const ListRates = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 ListRates.definition = {
     methods: ["get","head"],
-    url: '/admin/rates',
+    url: '/dashboard/rates',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 ListRates.url = (options?: RouteQueryOptions) => {
     return ListRates.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ ListRates.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 ListRates.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListRates.url(options),
@@ -35,7 +35,7 @@ ListRates.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 ListRates.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ListRates.url(options),
@@ -45,7 +45,7 @@ ListRates.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
     const ListRatesForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ListRates.url(options),
@@ -55,7 +55,7 @@ ListRates.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
         ListRatesForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListRates.url(options),
@@ -64,7 +64,7 @@ ListRates.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
         ListRatesForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListRates.url({

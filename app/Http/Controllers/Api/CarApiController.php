@@ -21,4 +21,24 @@ class CarApiController extends Controller
             'data' => CarResource::collection($cars),
         ], 200);
     }
+
+    public function show($id)
+    {
+        $car = Car::with(['brand', 'category'])->find($id);
+        $unvailableDates = Car::unavailableDates($car->id);
+        $car->unavailable_dates = $unvailableDates;
+
+        if ($car) {
+            return response([
+                'success' => true,
+                'message' => 'Car Details',
+                'data' => new CarResource($car),
+            ], 200);
+        } else {
+            return response([
+                'success' => false,
+                'message' => 'Car Not Found',
+            ], 404);
+        }
+    }
 }

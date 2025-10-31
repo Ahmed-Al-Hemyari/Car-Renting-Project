@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/admin/rates',
+    url: '/dashboard/rates',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: index.url(options),
@@ -55,7 +55,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url(options),
@@ -64,7 +64,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Rates\Pages\ListRates::__invoke
  * @see app/Filament/Resources/Rates/Pages/ListRates.php:7
- * @route '/admin/rates'
+ * @route '/dashboard/rates'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url({
@@ -80,7 +80,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Filament\Resources\Rates\Pages\CreateRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/CreateRate.php:7
- * @route '/admin/rates/create'
+ * @route '/dashboard/rates/create'
  */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -89,13 +89,13 @@ export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => (
 
 create.definition = {
     methods: ["get","head"],
-    url: '/admin/rates/create',
+    url: '/dashboard/rates/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Rates\Pages\CreateRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/CreateRate.php:7
- * @route '/admin/rates/create'
+ * @route '/dashboard/rates/create'
  */
 create.url = (options?: RouteQueryOptions) => {
     return create.definition.url + queryParams(options)
@@ -104,7 +104,7 @@ create.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Rates\Pages\CreateRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/CreateRate.php:7
- * @route '/admin/rates/create'
+ * @route '/dashboard/rates/create'
  */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -113,7 +113,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Rates\Pages\CreateRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/CreateRate.php:7
- * @route '/admin/rates/create'
+ * @route '/dashboard/rates/create'
  */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: create.url(options),
@@ -123,7 +123,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Rates\Pages\CreateRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/CreateRate.php:7
- * @route '/admin/rates/create'
+ * @route '/dashboard/rates/create'
  */
     const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: create.url(options),
@@ -133,7 +133,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Rates\Pages\CreateRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/CreateRate.php:7
- * @route '/admin/rates/create'
+ * @route '/dashboard/rates/create'
  */
         createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url(options),
@@ -142,7 +142,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Rates\Pages\CreateRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/CreateRate.php:7
- * @route '/admin/rates/create'
+ * @route '/dashboard/rates/create'
  */
         createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url({
@@ -158,7 +158,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 export const edit = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -167,13 +167,13 @@ export const edit = (args: { record: string | number } | [record: string | numbe
 
 edit.definition = {
     methods: ["get","head"],
-    url: '/admin/rates/{record}/edit',
+    url: '/dashboard/rates/{record}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 edit.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -201,7 +201,7 @@ edit.url = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 edit.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -210,7 +210,7 @@ edit.get = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
 edit.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
@@ -220,7 +220,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
     /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
     const editForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
@@ -230,7 +230,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
         editForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
@@ -239,7 +239,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Rates\Pages\EditRate::__invoke
  * @see app/Filament/Resources/Rates/Pages/EditRate.php:7
- * @route '/admin/rates/{record}/edit'
+ * @route '/dashboard/rates/{record}/edit'
  */
         editForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {

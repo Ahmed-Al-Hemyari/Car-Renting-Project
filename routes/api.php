@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BookingApiController;
 use App\Http\Controllers\Api\CarApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -10,3 +11,4 @@ Route::get('/user', function (Request $request) {
 
 
 Route::apiResource('cars', CarApiController::class);
+Route::apiResource('bookings', BookingApiController::class);

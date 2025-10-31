@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Categories\Pages\ListCategories::__invoke
  * @see app/Filament/Resources/Categories/Pages/ListCategories.php:7
- * @route '/admin/categories'
+ * @route '/dashboard/categories'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/admin/categories',
+    url: '/dashboard/categories',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Categories\Pages\ListCategories::__invoke
  * @see app/Filament/Resources/Categories/Pages/ListCategories.php:7
- * @route '/admin/categories'
+ * @route '/dashboard/categories'
  */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Categories\Pages\ListCategories::__invoke
  * @see app/Filament/Resources/Categories/Pages/ListCategories.php:7
- * @route '/admin/categories'
+ * @route '/dashboard/categories'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -35,7 +35,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Categories\Pages\ListCategories::__invoke
  * @see app/Filament/Resources/Categories/Pages/ListCategories.php:7
- * @route '/admin/categories'
+ * @route '/dashboard/categories'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -45,7 +45,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Categories\Pages\ListCategories::__invoke
  * @see app/Filament/Resources/Categories/Pages/ListCategories.php:7
- * @route '/admin/categories'
+ * @route '/dashboard/categories'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: index.url(options),
@@ -55,7 +55,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Categories\Pages\ListCategories::__invoke
  * @see app/Filament/Resources/Categories/Pages/ListCategories.php:7
- * @route '/admin/categories'
+ * @route '/dashboard/categories'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url(options),
@@ -64,7 +64,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Categories\Pages\ListCategories::__invoke
  * @see app/Filament/Resources/Categories/Pages/ListCategories.php:7
- * @route '/admin/categories'
+ * @route '/dashboard/categories'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: index.url({
@@ -80,7 +80,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -89,13 +89,13 @@ export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => (
 
 create.definition = {
     methods: ["get","head"],
-    url: '/admin/categories/create',
+    url: '/dashboard/categories/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 create.url = (options?: RouteQueryOptions) => {
     return create.definition.url + queryParams(options)
@@ -104,7 +104,7 @@ create.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: create.url(options),
@@ -113,7 +113,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: create.url(options),
@@ -123,7 +123,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
     const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: create.url(options),
@@ -133,7 +133,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
         createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url(options),
@@ -142,7 +142,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Categories\Pages\CreateCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/CreateCategory.php:7
- * @route '/admin/categories/create'
+ * @route '/dashboard/categories/create'
  */
         createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: create.url({
@@ -158,7 +158,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 export const edit = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -167,13 +167,13 @@ export const edit = (args: { record: string | number } | [record: string | numbe
 
 edit.definition = {
     methods: ["get","head"],
-    url: '/admin/categories/{record}/edit',
+    url: '/dashboard/categories/{record}/edit',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 edit.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -201,7 +201,7 @@ edit.url = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 edit.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: edit.url(args, options),
@@ -210,7 +210,7 @@ edit.get = (args: { record: string | number } | [record: string | number ] | str
 /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
 edit.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: edit.url(args, options),
@@ -220,7 +220,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
     /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
     const editForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: edit.url(args, options),
@@ -230,7 +230,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
         editForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, options),
@@ -239,7 +239,7 @@ edit.head = (args: { record: string | number } | [record: string | number ] | st
             /**
 * @see \App\Filament\Resources\Categories\Pages\EditCategory::__invoke
  * @see app/Filament/Resources/Categories/Pages/EditCategory.php:7
- * @route '/admin/categories/{record}/edit'
+ * @route '/dashboard/categories/{record}/edit'
  */
         editForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: edit.url(args, {

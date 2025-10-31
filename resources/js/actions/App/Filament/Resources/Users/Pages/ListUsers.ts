@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Users\Pages\ListUsers::__invoke
  * @see app/Filament/Resources/Users/Pages/ListUsers.php:7
- * @route '/admin/users'
+ * @route '/dashboard/users'
  */
 const ListUsers = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListUsers.url(options),
@@ -11,13 +11,13 @@ const ListUsers = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 ListUsers.definition = {
     methods: ["get","head"],
-    url: '/admin/users',
+    url: '/dashboard/users',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Users\Pages\ListUsers::__invoke
  * @see app/Filament/Resources/Users/Pages/ListUsers.php:7
- * @route '/admin/users'
+ * @route '/dashboard/users'
  */
 ListUsers.url = (options?: RouteQueryOptions) => {
     return ListUsers.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ ListUsers.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Users\Pages\ListUsers::__invoke
  * @see app/Filament/Resources/Users/Pages/ListUsers.php:7
- * @route '/admin/users'
+ * @route '/dashboard/users'
  */
 ListUsers.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListUsers.url(options),
@@ -35,7 +35,7 @@ ListUsers.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Users\Pages\ListUsers::__invoke
  * @see app/Filament/Resources/Users/Pages/ListUsers.php:7
- * @route '/admin/users'
+ * @route '/dashboard/users'
  */
 ListUsers.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ListUsers.url(options),
@@ -45,7 +45,7 @@ ListUsers.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Users\Pages\ListUsers::__invoke
  * @see app/Filament/Resources/Users/Pages/ListUsers.php:7
- * @route '/admin/users'
+ * @route '/dashboard/users'
  */
     const ListUsersForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ListUsers.url(options),
@@ -55,7 +55,7 @@ ListUsers.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Users\Pages\ListUsers::__invoke
  * @see app/Filament/Resources/Users/Pages/ListUsers.php:7
- * @route '/admin/users'
+ * @route '/dashboard/users'
  */
         ListUsersForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListUsers.url(options),
@@ -64,7 +64,7 @@ ListUsers.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Users\Pages\ListUsers::__invoke
  * @see app/Filament/Resources/Users/Pages/ListUsers.php:7
- * @route '/admin/users'
+ * @route '/dashboard/users'
  */
         ListUsersForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListUsers.url({

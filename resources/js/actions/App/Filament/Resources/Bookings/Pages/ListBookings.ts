@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ListBookings::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ListBookings.php:7
- * @route '/admin/bookings'
+ * @route '/dashboard/bookings'
  */
 const ListBookings = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListBookings.url(options),
@@ -11,13 +11,13 @@ const ListBookings = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 ListBookings.definition = {
     methods: ["get","head"],
-    url: '/admin/bookings',
+    url: '/dashboard/bookings',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ListBookings::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ListBookings.php:7
- * @route '/admin/bookings'
+ * @route '/dashboard/bookings'
  */
 ListBookings.url = (options?: RouteQueryOptions) => {
     return ListBookings.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ ListBookings.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ListBookings::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ListBookings.php:7
- * @route '/admin/bookings'
+ * @route '/dashboard/bookings'
  */
 ListBookings.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListBookings.url(options),
@@ -35,7 +35,7 @@ ListBookings.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Bookings\Pages\ListBookings::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ListBookings.php:7
- * @route '/admin/bookings'
+ * @route '/dashboard/bookings'
  */
 ListBookings.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ListBookings.url(options),
@@ -45,7 +45,7 @@ ListBookings.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Bookings\Pages\ListBookings::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ListBookings.php:7
- * @route '/admin/bookings'
+ * @route '/dashboard/bookings'
  */
     const ListBookingsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ListBookings.url(options),
@@ -55,7 +55,7 @@ ListBookings.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Bookings\Pages\ListBookings::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ListBookings.php:7
- * @route '/admin/bookings'
+ * @route '/dashboard/bookings'
  */
         ListBookingsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListBookings.url(options),
@@ -64,7 +64,7 @@ ListBookings.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Bookings\Pages\ListBookings::__invoke
  * @see app/Filament/Resources/Bookings/Pages/ListBookings.php:7
- * @route '/admin/bookings'
+ * @route '/dashboard/bookings'
  */
         ListBookingsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListBookings.url({

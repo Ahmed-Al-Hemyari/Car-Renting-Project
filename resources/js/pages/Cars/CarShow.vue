@@ -10,11 +10,10 @@ import 'v-calendar/style.css';
 
 const props = defineProps({
   car: Object,
-  unavailableDates: Array,
 });
 
 const attributes = computed(() =>
-  (props.unavailableDates || []).map(date => ({
+  (props.car.unavailable_dates || []).map(date => ({
     key: date,
     dates: date,
     highlight: {

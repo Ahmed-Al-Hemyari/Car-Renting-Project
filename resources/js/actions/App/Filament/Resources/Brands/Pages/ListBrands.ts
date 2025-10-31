@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 const ListBrands = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListBrands.url(options),
@@ -11,13 +11,13 @@ const ListBrands = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 ListBrands.definition = {
     methods: ["get","head"],
-    url: '/admin/brands',
+    url: '/dashboard/brands',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 ListBrands.url = (options?: RouteQueryOptions) => {
     return ListBrands.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ ListBrands.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 ListBrands.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListBrands.url(options),
@@ -35,7 +35,7 @@ ListBrands.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
 ListBrands.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ListBrands.url(options),
@@ -45,7 +45,7 @@ ListBrands.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
     const ListBrandsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ListBrands.url(options),
@@ -55,7 +55,7 @@ ListBrands.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
         ListBrandsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListBrands.url(options),
@@ -64,7 +64,7 @@ ListBrands.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\ListBrands::__invoke
  * @see app/Filament/Resources/Brands/Pages/ListBrands.php:7
- * @route '/admin/brands'
+ * @route '/dashboard/brands'
  */
         ListBrandsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListBrands.url({

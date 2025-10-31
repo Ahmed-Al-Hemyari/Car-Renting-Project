@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 const CreateBrand = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: CreateBrand.url(options),
@@ -11,13 +11,13 @@ const CreateBrand = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 CreateBrand.definition = {
     methods: ["get","head"],
-    url: '/admin/brands/create',
+    url: '/dashboard/brands/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 CreateBrand.url = (options?: RouteQueryOptions) => {
     return CreateBrand.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ CreateBrand.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 CreateBrand.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: CreateBrand.url(options),
@@ -35,7 +35,7 @@ CreateBrand.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
 CreateBrand.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: CreateBrand.url(options),
@@ -45,7 +45,7 @@ CreateBrand.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
     const CreateBrandForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: CreateBrand.url(options),
@@ -55,7 +55,7 @@ CreateBrand.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
         CreateBrandForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: CreateBrand.url(options),
@@ -64,7 +64,7 @@ CreateBrand.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Brands\Pages\CreateBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/CreateBrand.php:7
- * @route '/admin/brands/create'
+ * @route '/dashboard/brands/create'
  */
         CreateBrandForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: CreateBrand.url({

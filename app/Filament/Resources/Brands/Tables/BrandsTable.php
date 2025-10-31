@@ -30,9 +30,9 @@ class BrandsTable
                     ->searchable(),
                
             ])
-            ->filters([
-                TrashedFilter::make(),
-            ])
+            // ->filters([
+            //     TrashedFilter::make(),
+            // ])
             ->recordActions([
                 ViewAction::make()->label(''),
                 EditAction::make()->label(''),
@@ -41,8 +41,6 @@ class BrandsTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
-                    ForceDeleteBulkAction::make(),
-                    RestoreBulkAction::make(),
                 ]),
             ]);
     }

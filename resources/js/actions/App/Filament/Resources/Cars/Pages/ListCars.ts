@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Cars\Pages\ListCars::__invoke
  * @see app/Filament/Resources/Cars/Pages/ListCars.php:7
- * @route '/admin/cars'
+ * @route '/dashboard/cars'
  */
 const ListCars = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListCars.url(options),
@@ -11,13 +11,13 @@ const ListCars = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 ListCars.definition = {
     methods: ["get","head"],
-    url: '/admin/cars',
+    url: '/dashboard/cars',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Cars\Pages\ListCars::__invoke
  * @see app/Filament/Resources/Cars/Pages/ListCars.php:7
- * @route '/admin/cars'
+ * @route '/dashboard/cars'
  */
 ListCars.url = (options?: RouteQueryOptions) => {
     return ListCars.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ ListCars.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Cars\Pages\ListCars::__invoke
  * @see app/Filament/Resources/Cars/Pages/ListCars.php:7
- * @route '/admin/cars'
+ * @route '/dashboard/cars'
  */
 ListCars.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ListCars.url(options),
@@ -35,7 +35,7 @@ ListCars.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Cars\Pages\ListCars::__invoke
  * @see app/Filament/Resources/Cars/Pages/ListCars.php:7
- * @route '/admin/cars'
+ * @route '/dashboard/cars'
  */
 ListCars.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ListCars.url(options),
@@ -45,7 +45,7 @@ ListCars.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \App\Filament\Resources\Cars\Pages\ListCars::__invoke
  * @see app/Filament/Resources/Cars/Pages/ListCars.php:7
- * @route '/admin/cars'
+ * @route '/dashboard/cars'
  */
     const ListCarsForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ListCars.url(options),
@@ -55,7 +55,7 @@ ListCars.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Cars\Pages\ListCars::__invoke
  * @see app/Filament/Resources/Cars/Pages/ListCars.php:7
- * @route '/admin/cars'
+ * @route '/dashboard/cars'
  */
         ListCarsForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListCars.url(options),
@@ -64,7 +64,7 @@ ListCars.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \App\Filament\Resources\Cars\Pages\ListCars::__invoke
  * @see app/Filament/Resources/Cars/Pages/ListCars.php:7
- * @route '/admin/cars'
+ * @route '/dashboard/cars'
  */
         ListCarsForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ListCars.url({

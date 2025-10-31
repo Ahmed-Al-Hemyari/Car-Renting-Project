@@ -94,7 +94,7 @@
 
                             <Link
                             v-if="user.admin === 1"
-                            :href="'/admin'"
+                            :href="'/dashboard'"
                             class="block text-sm px-4 py-2 text-gray-700 hover:bg-rose-50 hover:text-[#941b1d] transition-colors"
                             >
                             Dashboard

@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \Filament\Pages\Dashboard::__invoke
  * @see vendor/filament/filament/src/Pages/Dashboard.php:7
- * @route '/admin'
+ * @route '/dashboard'
  */
 const Dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: Dashboard.url(options),
@@ -11,13 +11,13 @@ const Dashboard = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 Dashboard.definition = {
     methods: ["get","head"],
-    url: '/admin',
+    url: '/dashboard',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \Filament\Pages\Dashboard::__invoke
  * @see vendor/filament/filament/src/Pages/Dashboard.php:7
- * @route '/admin'
+ * @route '/dashboard'
  */
 Dashboard.url = (options?: RouteQueryOptions) => {
     return Dashboard.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ Dashboard.url = (options?: RouteQueryOptions) => {
 /**
 * @see \Filament\Pages\Dashboard::__invoke
  * @see vendor/filament/filament/src/Pages/Dashboard.php:7
- * @route '/admin'
+ * @route '/dashboard'
  */
 Dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: Dashboard.url(options),
@@ -35,7 +35,7 @@ Dashboard.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \Filament\Pages\Dashboard::__invoke
  * @see vendor/filament/filament/src/Pages/Dashboard.php:7
- * @route '/admin'
+ * @route '/dashboard'
  */
 Dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: Dashboard.url(options),
@@ -45,7 +45,7 @@ Dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     /**
 * @see \Filament\Pages\Dashboard::__invoke
  * @see vendor/filament/filament/src/Pages/Dashboard.php:7
- * @route '/admin'
+ * @route '/dashboard'
  */
     const DashboardForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: Dashboard.url(options),
@@ -55,7 +55,7 @@ Dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \Filament\Pages\Dashboard::__invoke
  * @see vendor/filament/filament/src/Pages/Dashboard.php:7
- * @route '/admin'
+ * @route '/dashboard'
  */
         DashboardForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: Dashboard.url(options),
@@ -64,7 +64,7 @@ Dashboard.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
             /**
 * @see \Filament\Pages\Dashboard::__invoke
  * @see vendor/filament/filament/src/Pages/Dashboard.php:7
- * @route '/admin'
+ * @route '/dashboard'
  */
         DashboardForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: Dashboard.url({

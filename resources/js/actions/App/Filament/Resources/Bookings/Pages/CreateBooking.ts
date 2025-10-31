@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Bookings\Pages\CreateBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/CreateBooking.php:7
- * @route '/admin/bookings/create'
+ * @route '/dashboard/bookings/create'
  */
 const CreateBooking = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: CreateBooking.url(options),
@@ -11,13 +11,13 @@ const CreateBooking = (options?: RouteQueryOptions): RouteDefinition<'get'> => (
 
 CreateBooking.definition = {
     methods: ["get","head"],
-    url: '/admin/bookings/create',
+    url: '/dashboard/bookings/create',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Bookings\Pages\CreateBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/CreateBooking.php:7
- * @route '/admin/bookings/create'
+ * @route '/dashboard/bookings/create'
  */
 CreateBooking.url = (options?: RouteQueryOptions) => {
     return CreateBooking.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ CreateBooking.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Filament\Resources\Bookings\Pages\CreateBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/CreateBooking.php:7
- * @route '/admin/bookings/create'
+ * @route '/dashboard/bookings/create'
  */
 CreateBooking.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: CreateBooking.url(options),
@@ -35,7 +35,7 @@ CreateBooking.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Filament\Resources\Bookings\Pages\CreateBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/CreateBooking.php:7
- * @route '/admin/bookings/create'
+ * @route '/dashboard/bookings/create'
  */
 CreateBooking.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: CreateBooking.url(options),
@@ -45,7 +45,7 @@ CreateBooking.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => (
     /**
 * @see \App\Filament\Resources\Bookings\Pages\CreateBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/CreateBooking.php:7
- * @route '/admin/bookings/create'
+ * @route '/dashboard/bookings/create'
  */
     const CreateBookingForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: CreateBooking.url(options),
@@ -55,7 +55,7 @@ CreateBooking.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => (
             /**
 * @see \App\Filament\Resources\Bookings\Pages\CreateBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/CreateBooking.php:7
- * @route '/admin/bookings/create'
+ * @route '/dashboard/bookings/create'
  */
         CreateBookingForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: CreateBooking.url(options),
@@ -64,7 +64,7 @@ CreateBooking.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => (
             /**
 * @see \App\Filament\Resources\Bookings\Pages\CreateBooking::__invoke
  * @see app/Filament/Resources/Bookings/Pages/CreateBooking.php:7
- * @route '/admin/bookings/create'
+ * @route '/dashboard/bookings/create'
  */
         CreateBookingForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: CreateBooking.url({

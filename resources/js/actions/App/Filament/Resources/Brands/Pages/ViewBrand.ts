@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 const ViewBrand = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewBrand.url(args, options),
@@ -11,13 +11,13 @@ const ViewBrand = (args: { record: string | number } | [record: string | number 
 
 ViewBrand.definition = {
     methods: ["get","head"],
-    url: '/admin/brands/{record}',
+    url: '/dashboard/brands/{record}',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 ViewBrand.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ ViewBrand.url = (args: { record: string | number } | [record: string | number ] 
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 ViewBrand.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewBrand.url(args, options),
@@ -54,7 +54,7 @@ ViewBrand.get = (args: { record: string | number } | [record: string | number ] 
 /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
 ViewBrand.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ViewBrand.url(args, options),
@@ -64,7 +64,7 @@ ViewBrand.head = (args: { record: string | number } | [record: string | number ]
     /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
     const ViewBrandForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ViewBrand.url(args, options),
@@ -74,7 +74,7 @@ ViewBrand.head = (args: { record: string | number } | [record: string | number ]
             /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
         ViewBrandForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewBrand.url(args, options),
@@ -83,7 +83,7 @@ ViewBrand.head = (args: { record: string | number } | [record: string | number ]
             /**
 * @see \App\Filament\Resources\Brands\Pages\ViewBrand::__invoke
  * @see app/Filament/Resources/Brands/Pages/ViewBrand.php:7
- * @route '/admin/brands/{record}'
+ * @route '/dashboard/brands/{record}'
  */
         ViewBrandForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewBrand.url(args, {

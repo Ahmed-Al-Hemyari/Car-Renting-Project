@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Filament\Resources\Cars\Pages\ViewCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/ViewCar.php:7
- * @route '/admin/cars/{record}'
+ * @route '/dashboard/cars/{record}'
  */
 const ViewCar = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewCar.url(args, options),
@@ -11,13 +11,13 @@ const ViewCar = (args: { record: string | number } | [record: string | number ] 
 
 ViewCar.definition = {
     methods: ["get","head"],
-    url: '/admin/cars/{record}',
+    url: '/dashboard/cars/{record}',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Filament\Resources\Cars\Pages\ViewCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/ViewCar.php:7
- * @route '/admin/cars/{record}'
+ * @route '/dashboard/cars/{record}'
  */
 ViewCar.url = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions) => {
     if (typeof args === 'string' || typeof args === 'number') {
@@ -45,7 +45,7 @@ ViewCar.url = (args: { record: string | number } | [record: string | number ] | 
 /**
 * @see \App\Filament\Resources\Cars\Pages\ViewCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/ViewCar.php:7
- * @route '/admin/cars/{record}'
+ * @route '/dashboard/cars/{record}'
  */
 ViewCar.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: ViewCar.url(args, options),
@@ -54,7 +54,7 @@ ViewCar.get = (args: { record: string | number } | [record: string | number ] | 
 /**
 * @see \App\Filament\Resources\Cars\Pages\ViewCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/ViewCar.php:7
- * @route '/admin/cars/{record}'
+ * @route '/dashboard/cars/{record}'
  */
 ViewCar.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: ViewCar.url(args, options),
@@ -64,7 +64,7 @@ ViewCar.head = (args: { record: string | number } | [record: string | number ] |
     /**
 * @see \App\Filament\Resources\Cars\Pages\ViewCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/ViewCar.php:7
- * @route '/admin/cars/{record}'
+ * @route '/dashboard/cars/{record}'
  */
     const ViewCarForm = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
         action: ViewCar.url(args, options),
@@ -74,7 +74,7 @@ ViewCar.head = (args: { record: string | number } | [record: string | number ] |
             /**
 * @see \App\Filament\Resources\Cars\Pages\ViewCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/ViewCar.php:7
- * @route '/admin/cars/{record}'
+ * @route '/dashboard/cars/{record}'
  */
         ViewCarForm.get = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewCar.url(args, options),
@@ -83,7 +83,7 @@ ViewCar.head = (args: { record: string | number } | [record: string | number ] |
             /**
 * @see \App\Filament\Resources\Cars\Pages\ViewCar::__invoke
  * @see app/Filament/Resources/Cars/Pages/ViewCar.php:7
- * @route '/admin/cars/{record}'
+ * @route '/dashboard/cars/{record}'
  */
         ViewCarForm.head = (args: { record: string | number } | [record: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
             action: ViewCar.url(args, {

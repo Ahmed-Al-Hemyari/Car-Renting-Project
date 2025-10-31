@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\Models\Car;
+use Illuminate\Container\Attributes\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -20,7 +21,8 @@ class CarResource extends JsonResource
             'name'  => $this->name,
             'price' => $this->price,
             'rate'  => $this->rate,
-            'image' => $this->image ? url('storage/' . $this->image) : null, // full URL
+            'image' => $this->image ? asset('storage/' . $this->image) : null,
+            'unavailable_dates' => $this->unavailable_dates ?? [],
             'brand' => [
                 'id'   => $this->brand->id ?? null,
                 'name' => $this->brand->name ?? null,

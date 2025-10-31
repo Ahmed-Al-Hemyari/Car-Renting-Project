@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Car extends Model
 {
     //
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     protected $fillable = [
         'name',
@@ -18,7 +17,13 @@ class Car extends Model
         'price',
         'brand_id',
         'category_id',
+        'unavailable_dates',
     ];
+
+    protected $casts = [
+        'unavailable_dates' => 'array',
+    ];
+
 
     protected static function boot()
     {
@@ -27,6 +32,30 @@ class Car extends Model
         static::saved(function ($car) {
             $car->updateRate();
         });
+    }
+
+    public function updateUnavailableDates()
+    {
+        // Get all bookings for this car
+        $bookings = $this->bookings()->where('status',['pending', 'confirmed', 'active'])->get(['start_date', 'end_date']);
+        $dates = [];
+
+        foreach ($bookings as $booking) {
+            $period = new \DatePeriod(
+                new \DateTime($booking->start_date),
+                new \DateInterval('P1D'),
+                (new \DateTime($booking->end_date))->modify('+1 day')
+            );
+
+            foreach ($period as $date) {
+                $dates[] = $date->format('Y-m-d');
+            }
+        }
+
+        // Remove duplicates and reset indexes
+        $this->unavailable_dates = array_values(array_unique($dates));
+
+        $this->saveQuietly();
     }
 
     public function updateRate()
@@ -91,25 +120,5 @@ class Car extends Model
                 $q->where('rate', '>=', $min);
             }
         });
-    }
-
-
-    public function unavailableDates()
-    {
-        return $this->bookings
-            ->whereIn('status', ['pending', 'confirmed', 'active'])
-            ->flatMap(function ($booking) {
-                $period = new \DatePeriod(
-                    new \DateTime($booking->start_date),
-                    new \DateInterval('P1D'),
-                    (new \DateTime($booking->end_date))->modify('+1 day') // include end date
-                );
-
-                return collect(iterator_to_array($period))
-                    ->map(fn($date) => $date->format('Y-m-d'));
-            })
-            ->unique()
-            ->values();
-
     }
 }

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('image')->nullable();
             $table->boolean('admin')->default(false);
-            $table->softDeletes('deleted_at');
             $table->rememberToken();
             $table->timestamps();
         });
