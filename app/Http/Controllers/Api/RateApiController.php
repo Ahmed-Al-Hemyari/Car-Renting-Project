@@ -17,7 +17,7 @@ class RateApiController extends Controller
             'user_id' => 'required|exists:users,id',
             'car_id' => 'required|exists:cars,id',
             'booking_id' => 'required|exists:bookings,id',
-            'rate' => 'required|integer|min:1|max:5',
+            'rate' => 'required|min:1|max:5',
             'comment' => 'nullable|string',
         ]);
 
