@@ -11,16 +11,34 @@ class CarApiController extends Controller
 {
     //
     
-    public function index()
+    public function index(Request $request)
     {
-       $cars = Car::with(['brand', 'category'])->latest()->get();
-        
+        // Only keep relevant filter params
+        $filters = $request->only(['search', 'brand', 'category', 'price', 'rate']);
+
+        $cars = Car::with([
+                'brand',
+                'category',
+                'rates' => fn($query) => $query->latest()->take(6),
+            ])
+            ->filter($filters)
+            ->latest()
+            ->paginate(10); // 👈 show 10 cars per page
+
         return response([
             'success' => true,
-            'message' => 'List of All Cars',
+            'message' => 'List of Cars',
             'data' => CarResource::collection($cars),
+            'meta' => [
+                'current_page' => $cars->currentPage(),
+                'last_page'    => $cars->lastPage(),
+                'per_page'     => $cars->perPage(),
+                'total'        => $cars->total(),
+            ],
         ], 200);
     }
+
+
 
     public function show($id)
     {

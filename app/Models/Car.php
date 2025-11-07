@@ -37,7 +37,7 @@ class Car extends Model
     public function updateUnavailableDates()
     {
         // Get all bookings for this car
-        $bookings = $this->bookings()->where('status',['pending', 'confirmed', 'active'])->get(['start_date', 'end_date']);
+        $bookings = $this->bookings()->whereIn('status',['pending', 'confirmed', 'active'])->get(['start_date', 'end_date']);
         $dates = [];
 
         foreach ($bookings as $booking) {

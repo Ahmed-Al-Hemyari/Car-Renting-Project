@@ -40,35 +40,42 @@ class BookingController extends Controller
 
         $formFields['user_id'] = Auth::id();
         $formFields['car_id'] = $car->id;
+        
+        
+        try {
+            $booking = Booking::create($formFields);
 
-        // Get current bookings that are still active
-        $currentBookings = Booking::where('car_id', $car->id)
-            ->whereIn('status', ['pending', 'confirmed'])
-            ->get();
-
-        $hasConflict = false;
-
-        foreach ($currentBookings as $booking) {
-            if (
-                $formFields['start_date'] <= $booking->end_date &&
-                $formFields['end_date'] >= $booking->start_date
-            ) {
-                $hasConflict = true;
-                break;
-            }
+            return redirect('/')
+                ->with('success', 'Request submitted successfully!');
+        } catch (\Exception $e) {
+            return back()
+                ->with('error', $e->getMessage())
+                ->withInput();
         }
-
-        if ($hasConflict) {
-            return redirect('/')->with('error', 'Car not available in that period.');
-        }
-
-        Booking::create($formFields);
-
-        return redirect('/')
-            ->with('success', 'Request submitted successfully!');
     }
 
     
+    
+            // Get current bookings that are still active
+            // $currentBookings = Booking::where('car_id', $car->id)
+            //     ->whereIn('status', ['pending', 'confirmed'])
+            //     ->get();
+    
+            // $hasConflict = false;
+    
+            // foreach ($currentBookings as $booking) {
+            //     if (
+            //         $formFields['start_date'] <= $booking->end_date &&
+            //         $formFields['end_date'] >= $booking->start_date
+            //     ) {
+            //         $hasConflict = true;
+            //         break;
+            //     }
+            // }
+    
+            // if ($hasConflict) {
+            //     return redirect('/')->with('error', 'Car not available in that period.');
+            // }
     public function cancel(Booking $booking){
 
         if(!in_array($booking->status, ['pending', 'confirmed'])){

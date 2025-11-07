@@ -13,7 +13,23 @@ class Booking extends Model
 
     protected static function booted()
     {
+        static::creating(function ($booking) {
+            // Check car availability BEFORE saving
+            $unavailable_dates = $booking->car->unavailable_dates ?? [];
+            $start = new \DateTime($booking->start_date);
+            $end = (new \DateTime($booking->end_date))->modify('+1 day');
+            $wanted_dates = new \DatePeriod($start, new \DateInterval('P1D'), $end);
+
+            foreach ($wanted_dates as $date) {
+                $dateStr = $date->format('Y-m-d');
+                if (in_array($dateStr, $unavailable_dates)) {
+                    throw new \Exception("The car is not available on {$dateStr}");
+                }
+            }
+        });
+
         static::saving(function ($booking) {
+            // Calculate total price before saving
             if ($booking->car && $booking->start_date && $booking->end_date) {
                 $days = $booking->start_date->diffInDays($booking->end_date);
                 $booking->total_price = ($booking->car->price ?? 0) * $days;
@@ -23,6 +39,7 @@ class Booking extends Model
         });
 
         static::created(function ($booking) {
+            // Update unavailable dates AFTER successful creation
             $booking->car->updateUnavailableDates();
         });
 
@@ -34,6 +51,7 @@ class Booking extends Model
             $booking->car->updateUnavailableDates();
         });
     }
+
 
 
     protected $fillable = [

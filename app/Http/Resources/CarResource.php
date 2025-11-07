@@ -33,6 +33,7 @@ class CarResource extends JsonResource
                 'id'   => $this->category->id ?? null,
                 'name' => $this->category->name ?? null,
             ],
+            'rates' => RateResource::collection($this->whenLoaded('rates')),
         ];
     }
 

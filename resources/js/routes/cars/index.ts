@@ -134,7 +134,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     store.form = storeForm
 /**
 * @see \App\Http\Controllers\Api\CarApiController::show
- * @see app/Http/Controllers/Api/CarApiController.php:25
+ * @see app/Http/Controllers/Api/CarApiController.php:43
  * @route '/api/cars/{car}'
  */
 export const show = (args: { car: string | number } | [car: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -149,7 +149,7 @@ show.definition = {
 
 /**
 * @see \App\Http\Controllers\Api\CarApiController::show
- * @see app/Http/Controllers/Api/CarApiController.php:25
+ * @see app/Http/Controllers/Api/CarApiController.php:43
  * @route '/api/cars/{car}'
  */
 show.url = (args: { car: string | number } | [car: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -177,7 +177,7 @@ show.url = (args: { car: string | number } | [car: string | number ] | string | 
 
 /**
 * @see \App\Http\Controllers\Api\CarApiController::show
- * @see app/Http/Controllers/Api/CarApiController.php:25
+ * @see app/Http/Controllers/Api/CarApiController.php:43
  * @route '/api/cars/{car}'
  */
 show.get = (args: { car: string | number } | [car: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -186,7 +186,7 @@ show.get = (args: { car: string | number } | [car: string | number ] | string | 
 })
 /**
 * @see \App\Http\Controllers\Api\CarApiController::show
- * @see app/Http/Controllers/Api/CarApiController.php:25
+ * @see app/Http/Controllers/Api/CarApiController.php:43
  * @route '/api/cars/{car}'
  */
 show.head = (args: { car: string | number } | [car: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -196,7 +196,7 @@ show.head = (args: { car: string | number } | [car: string | number ] | string |
 
     /**
 * @see \App\Http\Controllers\Api\CarApiController::show
- * @see app/Http/Controllers/Api/CarApiController.php:25
+ * @see app/Http/Controllers/Api/CarApiController.php:43
  * @route '/api/cars/{car}'
  */
     const showForm = (args: { car: string | number } | [car: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -206,7 +206,7 @@ show.head = (args: { car: string | number } | [car: string | number ] | string |
 
             /**
 * @see \App\Http\Controllers\Api\CarApiController::show
- * @see app/Http/Controllers/Api/CarApiController.php:25
+ * @see app/Http/Controllers/Api/CarApiController.php:43
  * @route '/api/cars/{car}'
  */
         showForm.get = (args: { car: string | number } | [car: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -215,7 +215,7 @@ show.head = (args: { car: string | number } | [car: string | number ] | string |
         })
             /**
 * @see \App\Http\Controllers\Api\CarApiController::show
- * @see app/Http/Controllers/Api/CarApiController.php:25
+ * @see app/Http/Controllers/Api/CarApiController.php:43
  * @route '/api/cars/{car}'
  */
         showForm.head = (args: { car: string | number } | [car: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({

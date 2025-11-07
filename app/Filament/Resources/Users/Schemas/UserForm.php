@@ -8,6 +8,7 @@ use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Wizard;
 use Filament\Schemas\Components\Wizard\Step;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Facades\Storage;
 
 class UserForm
 {
@@ -26,7 +27,20 @@ class UserForm
                                 ->required(),
                             FileUpload::make('image')
                                 ->directory('users')
-                                ->image(),
+                                ->image()
+                                ->saveUploadedFileUsing(function ($file, $state, $set, $get) {
+                                    $name  = $get('name') ?? 'image';
+
+                                    $filename = \Illuminate\Support\Str::slug($name);
+
+                                    $manager = new \Intervention\Image\ImageManager(new \Intervention\Image\Drivers\Gd\Driver());
+                                    $image = $manager->read($file->getRealPath())->encode(new \Intervention\Image\Encoders\WebpEncoder(80));
+
+                                    $webpPath = 'users/' . $filename . '.webp';
+                                    Storage::disk('public')->put($webpPath, (string) $image);
+
+                                    return $webpPath;
+                                }),
                         ]),
                     Step::make('Password')
                         ->schema([

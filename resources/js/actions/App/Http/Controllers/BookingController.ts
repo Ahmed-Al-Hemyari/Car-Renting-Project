@@ -182,7 +182,7 @@ store.post = (args: { car: number | { id: number } } | [car: number | { id: numb
     store.form = storeForm
 /**
 * @see \App\Http\Controllers\BookingController::cancel
- * @see app/Http/Controllers/BookingController.php:72
+ * @see app/Http/Controllers/BookingController.php:79
  * @route '/bookings/cancel/{booking}'
  */
 export const cancel = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -197,7 +197,7 @@ cancel.definition = {
 
 /**
 * @see \App\Http\Controllers\BookingController::cancel
- * @see app/Http/Controllers/BookingController.php:72
+ * @see app/Http/Controllers/BookingController.php:79
  * @route '/bookings/cancel/{booking}'
  */
 cancel.url = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -230,7 +230,7 @@ cancel.url = (args: { booking: number | { id: number } } | [booking: number | { 
 
 /**
 * @see \App\Http\Controllers\BookingController::cancel
- * @see app/Http/Controllers/BookingController.php:72
+ * @see app/Http/Controllers/BookingController.php:79
  * @route '/bookings/cancel/{booking}'
  */
 cancel.post = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -240,7 +240,7 @@ cancel.post = (args: { booking: number | { id: number } } | [booking: number | {
 
     /**
 * @see \App\Http\Controllers\BookingController::cancel
- * @see app/Http/Controllers/BookingController.php:72
+ * @see app/Http/Controllers/BookingController.php:79
  * @route '/bookings/cancel/{booking}'
  */
     const cancelForm = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -250,7 +250,7 @@ cancel.post = (args: { booking: number | { id: number } } | [booking: number | {
 
             /**
 * @see \App\Http\Controllers\BookingController::cancel
- * @see app/Http/Controllers/BookingController.php:72
+ * @see app/Http/Controllers/BookingController.php:79
  * @route '/bookings/cancel/{booking}'
  */
         cancelForm.post = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -261,7 +261,7 @@ cancel.post = (args: { booking: number | { id: number } } | [booking: number | {
     cancel.form = cancelForm
 /**
 * @see \App\Http\Controllers\BookingController::deleteMethod
- * @see app/Http/Controllers/BookingController.php:82
+ * @see app/Http/Controllers/BookingController.php:89
  * @route '/bookings/delete/{booking}'
  */
 export const deleteMethod = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -276,7 +276,7 @@ deleteMethod.definition = {
 
 /**
 * @see \App\Http\Controllers\BookingController::deleteMethod
- * @see app/Http/Controllers/BookingController.php:82
+ * @see app/Http/Controllers/BookingController.php:89
  * @route '/bookings/delete/{booking}'
  */
 deleteMethod.url = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -309,7 +309,7 @@ deleteMethod.url = (args: { booking: number | { id: number } } | [booking: numbe
 
 /**
 * @see \App\Http\Controllers\BookingController::deleteMethod
- * @see app/Http/Controllers/BookingController.php:82
+ * @see app/Http/Controllers/BookingController.php:89
  * @route '/bookings/delete/{booking}'
  */
 deleteMethod.delete = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -319,7 +319,7 @@ deleteMethod.delete = (args: { booking: number | { id: number } } | [booking: nu
 
     /**
 * @see \App\Http\Controllers\BookingController::deleteMethod
- * @see app/Http/Controllers/BookingController.php:82
+ * @see app/Http/Controllers/BookingController.php:89
  * @route '/bookings/delete/{booking}'
  */
     const deleteMethodForm = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -334,7 +334,7 @@ deleteMethod.delete = (args: { booking: number | { id: number } } | [booking: nu
 
             /**
 * @see \App\Http\Controllers\BookingController::deleteMethod
- * @see app/Http/Controllers/BookingController.php:82
+ * @see app/Http/Controllers/BookingController.php:89
  * @route '/bookings/delete/{booking}'
  */
         deleteMethodForm.delete = (args: { booking: number | { id: number } } | [booking: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

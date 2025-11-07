@@ -66,19 +66,19 @@ class BookingForm
                 //             $set('total_price', $total);
                 //         }
                 //     }),
-                Select::make('status')
-                    ->options([
-                        'pending' => 'Pending',
-                        'confirmed' => 'Confirmed',
-                        'cancelled' => 'Cancelled',
-                        'refused' => 'Refused',
-                        'active' => 'Active',
-                        'expired' => 'Expired',
-                        'completed' => 'Completed',
-                        'late' => 'Late',
-                    ])
-                    ->default('pending')
-                    ->required(),
+                // Select::make('status')
+                //     ->options([
+                //         'pending' => 'Pending',
+                //         'confirmed' => 'Confirmed',
+                //         'cancelled' => 'Cancelled',
+                //         'refused' => 'Refused',
+                //         'active' => 'Active',
+                //         'expired' => 'Expired',
+                //         'completed' => 'Completed',
+                //         'late' => 'Late',
+                //     ])
+                //     ->default('pending')
+                //     ->required(),
                 Textarea::make('notes')
                     ->default(null)
                     ->columnSpanFull(),

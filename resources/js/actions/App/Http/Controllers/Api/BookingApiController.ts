@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::index
- * @see app/Http/Controllers/Api/BookingApiController.php:12
+ * @see app/Http/Controllers/Api/BookingApiController.php:13
  * @route '/api/bookings'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::index
- * @see app/Http/Controllers/Api/BookingApiController.php:12
+ * @see app/Http/Controllers/Api/BookingApiController.php:13
  * @route '/api/bookings'
  */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::index
- * @see app/Http/Controllers/Api/BookingApiController.php:12
+ * @see app/Http/Controllers/Api/BookingApiController.php:13
  * @route '/api/bookings'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::index
- * @see app/Http/Controllers/Api/BookingApiController.php:12
+ * @see app/Http/Controllers/Api/BookingApiController.php:13
  * @route '/api/bookings'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
     /**
 * @see \App\Http\Controllers\Api\BookingApiController::index
- * @see app/Http/Controllers/Api/BookingApiController.php:12
+ * @see app/Http/Controllers/Api/BookingApiController.php:13
  * @route '/api/bookings'
  */
     const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -54,7 +54,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
             /**
 * @see \App\Http\Controllers\Api\BookingApiController::index
- * @see app/Http/Controllers/Api/BookingApiController.php:12
+ * @see app/Http/Controllers/Api/BookingApiController.php:13
  * @route '/api/bookings'
  */
         indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -63,7 +63,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
         })
             /**
 * @see \App\Http\Controllers\Api\BookingApiController::index
- * @see app/Http/Controllers/Api/BookingApiController.php:12
+ * @see app/Http/Controllers/Api/BookingApiController.php:13
  * @route '/api/bookings'
  */
         indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -79,7 +79,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     index.form = indexForm
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::store
- * @see app/Http/Controllers/Api/BookingApiController.php:23
+ * @see app/Http/Controllers/Api/BookingApiController.php:35
  * @route '/api/bookings'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -94,7 +94,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::store
- * @see app/Http/Controllers/Api/BookingApiController.php:23
+ * @see app/Http/Controllers/Api/BookingApiController.php:35
  * @route '/api/bookings'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -103,7 +103,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::store
- * @see app/Http/Controllers/Api/BookingApiController.php:23
+ * @see app/Http/Controllers/Api/BookingApiController.php:35
  * @route '/api/bookings'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -113,7 +113,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\Api\BookingApiController::store
- * @see app/Http/Controllers/Api/BookingApiController.php:23
+ * @see app/Http/Controllers/Api/BookingApiController.php:35
  * @route '/api/bookings'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -123,7 +123,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\Api\BookingApiController::store
- * @see app/Http/Controllers/Api/BookingApiController.php:23
+ * @see app/Http/Controllers/Api/BookingApiController.php:35
  * @route '/api/bookings'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -231,7 +231,7 @@ show.head = (args: { booking: string | number } | [booking: string | number ] | 
     show.form = showForm
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::update
- * @see app/Http/Controllers/Api/BookingApiController.php:43
+ * @see app/Http/Controllers/Api/BookingApiController.php:63
  * @route '/api/bookings/{booking}'
  */
 export const update = (args: { booking: string | number } | [booking: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -246,7 +246,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::update
- * @see app/Http/Controllers/Api/BookingApiController.php:43
+ * @see app/Http/Controllers/Api/BookingApiController.php:63
  * @route '/api/bookings/{booking}'
  */
 update.url = (args: { booking: string | number } | [booking: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -274,7 +274,7 @@ update.url = (args: { booking: string | number } | [booking: string | number ] |
 
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::update
- * @see app/Http/Controllers/Api/BookingApiController.php:43
+ * @see app/Http/Controllers/Api/BookingApiController.php:63
  * @route '/api/bookings/{booking}'
  */
 update.put = (args: { booking: string | number } | [booking: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -283,7 +283,7 @@ update.put = (args: { booking: string | number } | [booking: string | number ] |
 })
 /**
 * @see \App\Http\Controllers\Api\BookingApiController::update
- * @see app/Http/Controllers/Api/BookingApiController.php:43
+ * @see app/Http/Controllers/Api/BookingApiController.php:63
  * @route '/api/bookings/{booking}'
  */
 update.patch = (args: { booking: string | number } | [booking: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
@@ -293,7 +293,7 @@ update.patch = (args: { booking: string | number } | [booking: string | number ]
 
     /**
 * @see \App\Http\Controllers\Api\BookingApiController::update
- * @see app/Http/Controllers/Api/BookingApiController.php:43
+ * @see app/Http/Controllers/Api/BookingApiController.php:63
  * @route '/api/bookings/{booking}'
  */
     const updateForm = (args: { booking: string | number } | [booking: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -308,7 +308,7 @@ update.patch = (args: { booking: string | number } | [booking: string | number ]
 
             /**
 * @see \App\Http\Controllers\Api\BookingApiController::update
- * @see app/Http/Controllers/Api/BookingApiController.php:43
+ * @see app/Http/Controllers/Api/BookingApiController.php:63
  * @route '/api/bookings/{booking}'
  */
         updateForm.put = (args: { booking: string | number } | [booking: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -322,7 +322,7 @@ update.patch = (args: { booking: string | number } | [booking: string | number ]
         })
             /**
 * @see \App\Http\Controllers\Api\BookingApiController::update
- * @see app/Http/Controllers/Api/BookingApiController.php:43
+ * @see app/Http/Controllers/Api/BookingApiController.php:63
  * @route '/api/bookings/{booking}'
  */
         updateForm.patch = (args: { booking: string | number } | [booking: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -420,6 +420,103 @@ destroy.delete = (args: { booking: string | number } | [booking: string | number
         })
     
     destroy.form = destroyForm
-const BookingApiController = { index, store, show, update, destroy }
+/**
+* @see \App\Http\Controllers\Api\BookingApiController::getUserBookings
+ * @see app/Http/Controllers/Api/BookingApiController.php:24
+ * @route '/api/bookings/user/{userId}'
+ */
+export const getUserBookings = (args: { userId: string | number } | [userId: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: getUserBookings.url(args, options),
+    method: 'get',
+})
+
+getUserBookings.definition = {
+    methods: ["get","head"],
+    url: '/api/bookings/user/{userId}',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Api\BookingApiController::getUserBookings
+ * @see app/Http/Controllers/Api/BookingApiController.php:24
+ * @route '/api/bookings/user/{userId}'
+ */
+getUserBookings.url = (args: { userId: string | number } | [userId: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { userId: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    userId: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        userId: args.userId,
+                }
+
+    return getUserBookings.definition.url
+            .replace('{userId}', parsedArgs.userId.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Api\BookingApiController::getUserBookings
+ * @see app/Http/Controllers/Api/BookingApiController.php:24
+ * @route '/api/bookings/user/{userId}'
+ */
+getUserBookings.get = (args: { userId: string | number } | [userId: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: getUserBookings.url(args, options),
+    method: 'get',
+})
+/**
+* @see \App\Http\Controllers\Api\BookingApiController::getUserBookings
+ * @see app/Http/Controllers/Api/BookingApiController.php:24
+ * @route '/api/bookings/user/{userId}'
+ */
+getUserBookings.head = (args: { userId: string | number } | [userId: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: getUserBookings.url(args, options),
+    method: 'head',
+})
+
+    /**
+* @see \App\Http\Controllers\Api\BookingApiController::getUserBookings
+ * @see app/Http/Controllers/Api/BookingApiController.php:24
+ * @route '/api/bookings/user/{userId}'
+ */
+    const getUserBookingsForm = (args: { userId: string | number } | [userId: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+        action: getUserBookings.url(args, options),
+        method: 'get',
+    })
+
+            /**
+* @see \App\Http\Controllers\Api\BookingApiController::getUserBookings
+ * @see app/Http/Controllers/Api/BookingApiController.php:24
+ * @route '/api/bookings/user/{userId}'
+ */
+        getUserBookingsForm.get = (args: { userId: string | number } | [userId: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: getUserBookings.url(args, options),
+            method: 'get',
+        })
+            /**
+* @see \App\Http\Controllers\Api\BookingApiController::getUserBookings
+ * @see app/Http/Controllers/Api/BookingApiController.php:24
+ * @route '/api/bookings/user/{userId}'
+ */
+        getUserBookingsForm.head = (args: { userId: string | number } | [userId: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+            action: getUserBookings.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'HEAD',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'get',
+        })
+    
+    getUserBookings.form = getUserBookingsForm
+const BookingApiController = { index, store, show, update, destroy, getUserBookings }
 
 export default BookingApiController
