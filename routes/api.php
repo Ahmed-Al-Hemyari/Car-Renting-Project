@@ -19,9 +19,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [AuthApiController::class, 'user']);
     Route::put('users/update/{userId}', [AuthApiController::class, 'update']);
 
+    Route::apiResource('cars', CarApiController::class);
     Route::apiResource('bookings', BookingApiController::class);
     Route::get('bookings/user/{userId}', [BookingApiController::class, 'getUserBookings']);
     Route::post('rates', [RateApiController::class, 'store']);
     Route::get('rates/car/{carId}', [RateApiController::class, 'getCarRates']);
 });
-    Route::apiResource('cars', CarApiController::class);
